@@ -1,0 +1,11 @@
+<h1>Lista de Libros</h1>
+<a href="{% url 'crear_libro' %}">Crear Nuevo Libro</a>
+<ul>
+  {% for libro in libros %}
+  <li>
+    {{ libro.titulo }} -
+    <a href="{% url 'actualizar_libro' libro.id %}">Editar</a> -
+    <a href="{% url 'eliminar_libro' libro.id %}">Eliminar</a>
+  </li>
+  {% endfor %}
+</ul>
